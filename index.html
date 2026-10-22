@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Challenge Zone | Безумные Квесты</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⚡ Challenge Zone</div>
+        <nav>
+            <a href="#arena" class="nav-link active" data-target="section-arena">Арена</a>
+            <a href="#archive" class="nav-link" data-target="section-archive">История квестов</a>
+            <a href="#heatmap" class="nav-link" data-target="section-heatmap">Календарь безумия</a>
+        </nav>
+        <div class="backup-controls">
+            <button id="btn-export" class="btn btn-secondary">📤 Слить сейв (JSON)</button>
+            <button id="btn-import-trigger" class="btn btn-secondary">📥 Загрузить сейв</button>
+            <input type="file" id="file-import" accept=".json" style="display: none;">
+        </div>
+    </header>
+
+    <main>
+        <!-- СЕКЦИЯ АРЕНЫ (ГЕНЕРАТОР) -->
+        <section id="section-arena" class="app-section">
+            <div class="welcome-box">
+                <h2>Готов к безумию? 🔥</h2>
+                <p>Испытай себя или брось вызов другу. Жми на кнопку, хватай квест и зарабатывай очки!</p>
+                <button id="btn-generate" class="btn btn-primary btn-huge">🎰 СГЕНЕРИРОВАТЬ КВЕСТ</button>
+            </div>
+
+            <!-- Активный квест -->
+            <div id="active-challenge-box" class="challenge-card active-card hidden">
+                <div class="card-badge" id="challenge-difficulty">ЭПИЧЕСКИЙ</div>
+                <h3 id="challenge-title">Название задания</h3>
+                <p id="challenge-desc">Описание того, что нужно сделать, чтобы не опозориться.</p>
+                <div class="reward-tag"> Награда: <span id="challenge-reward">100</span> XP</div>
+                <div class="card-actions">
+                    <button id="btn-challenge-fail" class="btn btn-danger">💀 Слил</button>
+                    <button id="btn-challenge-success" class="btn btn-success">✅ Выполнил!</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ АРХИВА -->
+        <section id="section-archive" class="app-section hidden">
+            <div class="section-header">
+                <h2>Пройденные испытания</h2>
+            </div>
+            <div id="archive-container" class="habits-grid">
+                <!-- Сюда падают выполненные/проваленные квесты -->
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ HEATMAP -->
+        <section id="section-heatmap" class="app-section hidden">
+            <div class="section-header">
+                <h2>Твоя активность за 365 дней</h2>
+            </div>
+            <div class="heatmap-wrapper">
+                <div id="heatmap-grid" class="heatmap-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>
